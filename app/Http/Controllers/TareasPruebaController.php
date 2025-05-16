@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\TareasPruebaModel;
+
+
+
 class TareasPruebaController extends Controller
 {
     /**
@@ -13,20 +17,36 @@ class TareasPruebaController extends Controller
         return Inertia::render('Tareas');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+
+        $request->validate([
+            'descripcion' => 'string|required'
+        ]);
+
+        $newTarea = new TareasPruebaModel;        
+        try {
+            $newTarea->fill($request->all());
+            $newTarea->save();
+        } catch (Exception $e) {
+                // Capturar la excepción y manejarla
+                    $mensaje = [
+                        'message' => 'Error al guardar la Tarea', 
+                        'error' =>  $e->getMessage()      
+                    ];
+            return response()->json($mensaje,400);
+            
+        }
+
+        $mensaje = [
+                        'message' => 'Tarea guardada correctamente', 
+                        
+                    ];
+        return response()->json($mensaje,200);
+
     }
 
     /**

@@ -36,7 +36,18 @@ const form = reactive({
     descripcion: '',
 })
 
+
 const submit = () => {
-    router.post('/descripcion', form)
+    router.post('/tareas', form, {
+        onSuccess: (page) => {
+            console.log('Formulario enviado correctamente.')
+            console.log('Respuesta:', page)
+        },
+        onError: (errors) => {
+            
+            console.log('Hubo un error al enviar el formulario.')
+            console.error('Errores:', errors)
+        },
+    })
 }
 </script>s
