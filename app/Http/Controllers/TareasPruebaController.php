@@ -24,7 +24,7 @@ class TareasPruebaController extends Controller
     public function store(Request $request) {
 
         $request->validate([
-            'descripcion' => 'string|required'
+            'Descripcion' => 'string|required'
         ]);
 
         $newTarea = new TareasPruebaModel;        
