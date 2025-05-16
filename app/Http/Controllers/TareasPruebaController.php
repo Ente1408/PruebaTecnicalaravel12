@@ -13,10 +13,19 @@ class TareasPruebaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(){
-        return Inertia::render('Tareas');
+    public function index() {
+
+            $tareas = TareasPruebaModel::all();
+        return Inertia::render('ListaTareas',[
+            'tareas' =>$tareas   
+        ]);
     }
 
+    public function create() {
+
+        return Inertia::render('Tareas');
+
+    }
 
     /**
      * Store a newly created resource in storage.
