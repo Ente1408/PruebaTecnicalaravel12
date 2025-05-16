@@ -1,14 +1,14 @@
 🛠️ Instrucciones de instalación
 
-    Clonar el repositorio:
+ Clonar el repositorio:
 
-git clone https://github.com/tuusuario/nombre-proyecto.git
-cd nombre-proyecto
+   git clone https://github.com/Ente1408/PruebaTecnicalaravel12.git
+    cd PruebaTecnicalaravel12
 
-    Instalar dependencias:
+Instalar dependencias:
 
-composer install
-npm install
+    composer install
+    npm install
 
 Configurar entorno:
 
