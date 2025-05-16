@@ -1,9 +1,9 @@
 🛠️ Instrucciones de instalación
 
- Clonar el repositorio:
+Clonar el repositorio:
 
    git clone https://github.com/Ente1408/PruebaTecnicalaravel12.git
-    cd PruebaTecnicalaravel12
+   cd PruebaTecnicalaravel12
 
 Instalar dependencias:
 
